@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('lane1');
             $table->string('lane2');
             $table->string('address')->nullable();
+            $table->integer('admin')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

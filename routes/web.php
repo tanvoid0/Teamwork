@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/signup', 'UserController@signup')->name('signup');
+
+//Route::group(['namespace' => 'User'], function)
+Route::resource('member', 'UserController');

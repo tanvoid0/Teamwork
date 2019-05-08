@@ -9,11 +9,11 @@
     <title>Teamwork</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-{{--    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />--}}
-{{--    <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>--}}
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>
 
-    <link rel="stylesheet" href="{{ secure_asset('assets/css/main.css') }}" />
-    <noscript><link rel="stylesheet" href="{{ secure_asset('assets/css/noscript.css') }}" /></noscript>
+{{--    <link rel="stylesheet" href="{{ secure_asset('assets/css/main.css') }}" />--}}
+{{--    <noscript><link rel="stylesheet" href="{{ secure_asset('assets/css/noscript.css') }}" /></noscript>--}}
 </head>
 <body class="is-preload">
 
@@ -53,11 +53,11 @@
             <p>Watch us live!</p>
             <div class="split style1">
                 <section>
-                    <iframe src="https://player.twitch.tv/?channel=thaque20" frameborder="0" allowfullscreen="true"
+                    <iframe src="https://player.twitch.tv/?channel=tanveerhoque" frameborder="0" allowfullscreen="true"
                             scrolling="no" height="378" width="620"></iframe>
                 </section>
                 <section>
-                    <iframe src="https://www.twitch.tv/embed/thaque20/chat" frameborder="0" scrolling="no"
+                    <iframe src="https://www.twitch.tv/embed/tanveerhoque/chat" frameborder="0" scrolling="no"
                             height="378" width="350"></iframe>
                 </section>
             </div>
@@ -102,7 +102,7 @@
                 </section>
             </div>
             <ul class="actions">
-                <li><a href="#" class="button">Join US</a></li>
+                <li><a href="{{ route('member.index') }}" target="_blank" class="button">View All Members</a></li>
             </ul>
         </div>
     </section>
@@ -228,23 +228,24 @@
 </footer>
 
 <!-- Scripts -->
-{{--<script src="{{ asset('assets/js/jquery.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/browser.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/util.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/main.js') }}"></script>--}}
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>
+<script src="{{ asset('assets/js/browser.min.js') }}"></script>
+<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>
+<script src="{{ asset('assets/js/util.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
 
-<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery.scrollex.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/jquery.scrolly.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/browser.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/breakpoints.min.js') }}"></script>
-<script src="{{ secure_asset('assets/js/util.js') }}"></script>
-<script src="{{ secure_asset('assets/js/main.js') }}"></script>
+{{--<script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/jquery.scrollex.min.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/jquery.scrolly.min.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/browser.min.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/breakpoints.min.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/util.js') }}"></script>--}}
+{{--<script src="{{ secure_asset('assets/js/main.js') }}"></script>--}}
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-@if(Session::get('action') == "user-signup" && Session::get('result') == "success"):
+@if(Session::get('action') == "member" && Session::get('result') == "success"):
     <script>
         swal("Congratulations!", "You are now a proud member of Teamwork!", "success");
     </script>
