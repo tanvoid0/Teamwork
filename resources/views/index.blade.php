@@ -124,8 +124,8 @@
             <p>Prove your worth.</p>
             <div class="split style1">
                 <section>
-                    <form method="post" action="{{ route('signup') }}">
-                        @csrf
+                    <form method="POST" action="{{ route('signup') }}">
+                        {{ csrf_field() }}
                         <div class="fields">
                             <div class="field half">
                                 <label for="name">Name</label>
