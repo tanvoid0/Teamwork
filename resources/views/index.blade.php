@@ -1,22 +1,17 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
     <title>Teamwork</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-{{--    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />--}}
-{{--    <noscript><link rel="stylesheet" href="{{ asset('assets/css/noscript.css') }}" /></noscript>--}}
-
     <link rel="stylesheet" href="{{ secure_asset('assets/css/main.css') }}" />
     <noscript><link rel="stylesheet" href="{{ secure_asset('assets/css/noscript.css') }}" /></noscript>
+    {{--Loader--}}
+    <link rel="stylesheet" href="{{ secure_asset('css/demo.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/fakeLoader.min.css') }}">
 </head>
 <body class="is-preload">
-
+<div class="fakeloader"></div>
 <!-- Sidebar -->
 <section id="sidebar">
     <div class="inner">
@@ -24,9 +19,10 @@
             <ul>
                 <li><a href="#intro">Welcome</a></li>
                 <li><a href="#stream">Stream</a></li>
-                <li><a href="#member">Members</a></li>
+                <li><a href="#admin">Admins</a></li>
                 <li><a href="#tournament">Tournaments</a></li>
                 <li><a href="#join">Join US</a></li>
+                <li><a href="{{ url('login') }}" target="_blank">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -52,22 +48,31 @@
             <h2>Stream</h2>
             <p>Watch us live!</p>
             <div class="split style1">
+                @if($stream->client == "youtube")
                 <section>
-                    <iframe src="https://player.twitch.tv/?channel=tanveerhoque" frameborder="0" allowfullscreen="true"
-                            scrolling="no" height="378" width="620"></iframe>
+                    {{--                Youtube--}}
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UCUCBVCgwxp0VdbRU3P-O7lA" frameborder="0" allowfullscreen></iframe>
+
+
                 </section>
-                <section>
-                    <iframe src="https://www.twitch.tv/embed/tanveerhoque/chat" frameborder="0" scrolling="no"
-                            height="378" width="350"></iframe>
-                </section>
+                @elseif($stream->client == "twitch")
+                    <section>
+                        <iframe src="https://player.twitch.tv/?channel=tanveerhoque" frameborder="0" allowfullscreen="true"
+                                scrolling="no" height="378" width="620"></iframe>
+                    </section>
+                    <section>
+                        <iframe src="https://www.twitch.tv/embed/tanveerhoque/chat" frameborder="0" scrolling="no"
+                                height="378" width="350"></iframe>
+                    </section>
+                @endif
             </div>
         </div>
     </section>
 
     <!-- Two -->
-    <section id="member" class="wrapper style3 fade-up fullscreen">
+    <section id="admin" class="wrapper style3 fade-up fullscreen">
         <div class="inner">
-            <h2>Members</h2>
+            <h2>Admin</h2>
             <p>Alone, everything is hard. But together, we acheived what we are today!</p>
             <div class="features">
                 <section>
@@ -113,7 +118,7 @@
             <h1>Tournament is under construction!</h1>
             <p>Stay tuned.</p>
             <ul class="actions">
-                <li><a href="#member" class="button scrolly">See our Members!</a></li>
+                <li><a href="{{ route('member.index') }}" class="button scrolly">See our Members!</a></li>
             </ul>
         </div>
     </section>
@@ -228,14 +233,6 @@
 </footer>
 
 <!-- Scripts -->
-{{--<script src="{{ asset('assets/js/jquery.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/jquery.scrollex.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/jquery.scrolly.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/browser.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/breakpoints.min.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/util.js') }}"></script>--}}
-{{--<script src="{{ asset('assets/js/main.js') }}"></script>--}}
-
 <script src="{{ secure_asset('assets/js/jquery.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/jquery.scrollex.min.js') }}"></script>
 <script src="{{ secure_asset('assets/js/jquery.scrolly.min.js') }}"></script>
@@ -251,5 +248,19 @@
     </script>
 @endif
 
+{{--Loader--}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ secure_asset('js/fakeLoader.min.js') }}"></script>
+<script>
+    $(document).ready(function(){
+        $.fakeLoader({
+            timeToHide:1200,
+            bgColor:"#9b59b6",
+            spinner:"spinner7"
+        });
+    });
+</script>
+
+<div class="fakeLoader"></div>
 </body>
 </html>
