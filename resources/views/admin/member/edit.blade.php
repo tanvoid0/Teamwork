@@ -25,7 +25,7 @@
                                 <label for="image" class="col-sm-2 control-label">Profile Picture</label>
                                 <div class="col-sm-10">
                                     <div class="dropify-wrapper">
-                                        <input type="file" id="input-file-now" class="dropify" name="image" data-default-file="{{ secure_asset('images/user/'.$user->image) }}">
+                                        <input type="file" id="input-file-now" class="dropify" name="image" data-default-file="{{ asset('images/user/'.$user->image) }}">
                                         <button type="button" class="dropify-clear">Remove</button>
                                     </div>
 
@@ -77,7 +77,7 @@
                                 <label for="messenger" class="col-sm-2 control-label">Messenger Username</label>
 
                                 <div class="col-sm-10">
-                                    <input type="messenger" class="form-control" id="messenger" name="messenger" value="{{ $user->messenger }}"
+                                    <input type="text" class="form-control" id="messenger" name="messenger" value="{{ $user->messenger }}"
                                            placeholder="Enter Messenger Username...">
                                 </div>
                             </div>
@@ -158,30 +158,33 @@
                                            placeholder="Enter Address...">
                                 </div>
                             </div>
+                            @if(Auth::user()->admin > 0)
+                                <div class="form-group">
+                                    <label for="admin" class="col-sm-2 control-label">Admin Role</label>
 
-                            <div class="form-group">
-                                <label for="admin" class="col-sm-2 control-label">Admin Role</label>
-
-                                <div class="col-sm-10">
-                                    <select class="form-control" id="admin" name="admin">
-                                        <option value="0"
-                                                @if($user->admin == 0)
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="admin" name="admin">
+                                            <option value="0"
+                                                    @if($user->admin == 0)
                                                     selected
-                                                @endif
-                                        >Member</option>
-                                        <option value="1"
-                                                @if($user->admin == 1)
-                                                selected
-                                                @endif
-                                        >Officer</option>
-                                        <option value="2"
-                                                @if($user->admin == 2)
-                                                selected
-                                                @endif
-                                        >Admin</option>
-                                    </select>
+                                                    @endif
+                                            >Member</option>
+                                            <option value="1"
+                                                    @if($user->admin == 1)
+                                                    selected
+                                                    @endif
+                                            >Officer</option>
+                                            @if(Auth::user()->admin >1)
+                                                <option value="2"
+                                                        @if($user->admin == 2)
+                                                        selected
+                                                        @endif
+                                                >Admin</option>
+                                            @endif
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
 
                         </div>
                         <!-- /.box-body -->

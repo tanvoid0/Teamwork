@@ -51,7 +51,7 @@
                         </div>
                         <div class="icon">
                             {{--                        <i class="ion ion-pie-graph"></i>--}}
-                            <img src="{{ secure_asset('images/'.$stream->icon)}}" alt="" style="height: 70px; width:70px;">
+                            <img src="{{ asset('images/'.$stream->icon)}}" alt="" style="height: 70px; width:70px;">
                         </div>
                         <!-- Button trigger modal -->
                         <a target="_blank" href="{{ $stream->link }}" class="small-box-footer">Visit <i

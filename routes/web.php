@@ -57,3 +57,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::resource('stream', 'StreamController');
     Route::resource('info', 'InfoController');
 });
+
+Route::get('custom', function(){
+   return "Hello";
+})->name('member');

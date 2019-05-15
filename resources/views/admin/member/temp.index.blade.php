@@ -10,34 +10,19 @@
         <div class="row">
             <div class="col-lg-12 col-xs-12">
                 <div class="box">
-                    <div class="col-sm-6">
-                        @if(Auth::user()->admin > 0)
-                            <div class="box-header">
-                                <a href="{{ route('member.create') }}" class="btn btn-success"><i
-                                            class="fa fa-plus"></i>
-                                    Add
-                                    Member</a>
-                            </div>
-                        @endif
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="dataTables_filter">
-                            <label>Search:
-                                <input type="text" class="form-control input-sm" placeholder="Search For anything"
-                                       id="myInput">
-                            </label>
+                    @if(Auth::user()->admin > 0)
+                        <div class="box-header">
+                            <a href="{{ route('member.create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
+                                Add
+                                Member</a>
                         </div>
-                    </div>
-                    <!-- /.box-header -->
+                @endif
+                <!-- /.box-header -->
                     <div class="box-body">
                         <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                             <div class="row">
-
-
-                            </div>
-                            <div class="row">
                                 <div class="col-sm-12">
-                                    <table id="myTable" class="table table-bordered table-striped dataTable"
+                                    <table id="example1" class="table table-bordered table-striped dataTable"
                                            role="grid" aria-describedby="example1_info"
                                            style="font-size:20px; font-weight: bold;">
                                         <thead>
@@ -212,6 +197,4 @@
         <!-- /.row (main row) -->
 
     </section>
-
-
 @endsection

@@ -19,7 +19,7 @@
                     </div>
                     <div class="icon">
 {{--                        <i class="ion ion-pie-graph"></i>--}}
-                        <img src="{{ secure_asset('images/lol.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/lol.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -34,7 +34,7 @@
                         <p>Top Players</p>
                     </div>
                     <div class="icon">
-                        <img src="{{ secure_asset('images/top.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/top.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -49,7 +49,7 @@
                         <p>Mid Players</p>
                     </div>
                     <div class="icon">
-                        <img src="{{ secure_asset('images/mid.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/mid.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -64,7 +64,7 @@
                         <p>Bot Players</p>
                     </div>
                     <div class="icon">
-                        <img src="{{ secure_asset('images/bot.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/bot.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -79,7 +79,7 @@
                         <p>Support Players</p>
                     </div>
                     <div class="icon">
-                        <img src="{{ secure_asset('images/sp.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/sp.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -96,7 +96,7 @@
                         <p>Jungle Players</p>
                     </div>
                     <div class="icon">
-                        <img src="{{ secure_asset('images/jg.png')}}" alt="" style="height: 70px; width:70px;">
+                        <img src="{{ asset('images/jg.png')}}" alt="" style="height: 70px; width:70px;">
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>

@@ -19,7 +19,7 @@
                             <label for="image" class="col-sm-2 control-label">Client Icon</label>
                             <div class="col-sm-10">
                                 <div class="dropify-wrapper">
-                                    <input type="file" id="input-file-now" class="dropify" name="icon" data-default-file="{{ secure_asset('images/'.$stream->icon) }}">
+                                    <input type="file" id="input-file-now" class="dropify" name="icon" data-default-file="{{ asset('images/'.$stream->icon) }}">
                                     <button type="button" class="dropify-clear">Remove</button>
                                 </div>
 
