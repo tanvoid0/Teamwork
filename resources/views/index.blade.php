@@ -242,9 +242,9 @@
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-@if(Session::get('action') == "member" && Session::get('result') == "success"):
+@if(Session::has("message")):
     <script>
-        swal("Congratulations!", "You are now a proud member of Teamwork!", "success");
+        swal("{{ Session::get('title') }}", "{{ Session::get('message') }}!", "{{ Session::get('result')  }}");
     </script>
 @endif
 

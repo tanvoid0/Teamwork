@@ -96,6 +96,14 @@ class UserController extends Controller
     }
 
     public function signup(Request $request){
+
+        if(User::where('email', $request->email)->exists()){
+            Session::flash("title", "Sorry");
+            Session::flash("result", "warning");
+            Session::flash("message", "This email is Already registered");
+            Session::flash("action", "member-signup");
+            return redirect()->back();
+        }
         $user = new User();
         $user->name = $request->name;
         $user->phone = $request->phone;
@@ -107,8 +115,9 @@ class UserController extends Controller
         $user->address = $request->address;
 
         $user->save();
-        Session::flash("action", "member-signup");
-        Session::flash("result", "success");
+        Session::flash("title", "Congratulations!");
+        Session::flash("result", "successful");
+        Session::flash("message", "You are now a proud member of Teamwork!!");
         return redirect()->back();
     }
 }
