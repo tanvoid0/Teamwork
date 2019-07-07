@@ -5,10 +5,9 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-### Teamwork official website based on League of Legends Players
+### Teamwork official website based on League of Legends Gamers
 
-### Tech
-
+### Tech used
 
 * ##### Laravel
 * ##### Admin LTE
