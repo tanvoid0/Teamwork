@@ -43,7 +43,7 @@
                                         <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Phone</th>
+                                            <!-- <th>Phone</th> -->
                                             <th>Email</th>
                                             <th>Lane</th>
                                             <th>Social</th>
@@ -62,7 +62,7 @@
 @endif
                                                     ">
                                                 <td>{{$user->name}}</td>
-                                                <td>{{ $user->phone }}</td>
+                                                <!-- <td>{{ $user->phone }}</td> -->
                                                 <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
                                                 <td>
                                                     <i><span><img src="{{ asset('images/'.$user->lane1.'.png')}}"
